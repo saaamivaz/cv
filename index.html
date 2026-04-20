@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Samantha Montserrat Hernández Vázquez</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sb:     #90a153;   /* color sidebar y header     */
+  --page:   #FAF8F3;   /* fondo crema contenido      */
+  --acc:    #7A5028;   /* acento cobre oscuro        */
+  --acc2:   #A06B35;
+  --t1:     #2e2328;   /* texto oscuro principal     */
+  --t2:     #2e2328;
+  --t3:     #6E6E6C;
+  --div:    #DDD8CE;
+  --s-text: #1C2B06;   /* texto oscuro sobre oliva   */
+  --s-muted:#3D5215;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #C8C3BA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px;
+  min-height: 100vh;
+}
+
+.controls {
+  display: flex; gap: 10px; margin-bottom: 18px;
+  flex-wrap: wrap; justify-content: center;
+}
+.btn {
+  padding: 8px 22px;
+  border: 1.5px solid var(--acc);
+  border-radius: 3px; background: white; color: var(--acc);
+  font-family: 'DM Sans', sans-serif; font-size: 12.5px;
+  font-weight: 500; cursor: pointer; letter-spacing: 0.04em;
+  transition: all 0.18s;
+}
+.btn:hover, .btn.active { background: var(--acc); color: white; }
+.btn-print { border-color: var(--s-text); color: var(--s-text); }
+.btn-print:hover { background: var(--s-text); color: white; }
+.note {
+  font-size: 11px; color: #888; text-align: center;
+  margin-top: 12px; font-style: italic;
+}
+
+/* ── PÁGINA ── */
+.page {
+  width: 860px;
+  background: var(--page);
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  box-shadow: 0 6px 48px rgba(0,0,0,0.22);
+}
+
+/* ══════════════════════════════════════
+   HEADER — dos bandas
+   ══════════════════════════════════════ */
+.page-header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+.header-photo-area {
+  background: var(--sb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+}
+.header-photo {
+  width: 215px; height: 215px;
+  border-radius: 50%; object-fit: cover;
+  border: 3px solid rgba(28,43,6,0.3);
+}
+.header-photo-area {
+  background: var(--sb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 16px;
+}
+.cv-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 700; color: var(--t1);
+  line-height: 1.1; letter-spacing: 0.04em;
+  margin-bottom: 5px;
+}
+.header-right { display: flex; flex-direction: column; }
+.header-name-band {
+  background: var(--page);
+  padding: 22px 32px 14px 24px;
+}
+.header-desc-band {
+  background: #f4ebe9;
+  padding: 14px 32px 16px 24px;
+}
+
+.cv-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 700; color: var(--s-text);
+  line-height: 1.1; letter-spacing: 0.04em;
+  text-transform: uppercase; margin-bottom: 5px;
+}
+.cv-role {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--acc);
+}
+.cv-profile {
+  font-size: 12px; color: var(--t1);
+  line-height: 1.65;
+}
+
+/* ══════════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════════ */
+.sidebar {
+  background: var(--sb);
+  grid-column: 1; grid-row: 2;
+  display: flex; flex-direction: column;
+}
+
+.s-section {
+  padding: 13px 20px;
+  border-bottom: 1px solid rgba(28,43,6,0.12);
+}
+.s-title {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--s-text); margin-bottom: 11px;
+  display: flex; align-items: center; gap: 7px;
+}
+.s-title::after {
+  content: ''; flex: 1; height: 1.5px;
+  background: rgba(28,43,6,0.3);
+}
+
+.c-item { margin-bottom: 9px; }
+.c-lbl {
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--s-text); display: block; margin-bottom: 2px;
+  font-weight: 700;
+}
+.c-val { font-size: 12px; color: var(--s-text); line-height: 1.4; word-break: break-all; }
+.c-val.small { font-size: 10.5px; }
+
+.sk-bar { margin-bottom: 9px; }
+.sk-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.sk-name { font-size: 12px; color: var(--s-text); font-weight: 500; }
+.sk-pct  { font-size: 10px; color: var(--s-muted); font-weight: 700; }
+.bar { height: 4px; background: rgba(28,43,6,0.15); border-radius: 2px; overflow: hidden; }
+.bar-fill { height: 100%; background: rgba(28,43,6,0.55); border-radius: 2px; }
+
+.pills { display: flex; flex-wrap: wrap; gap: 4px; }
+.pill {
+  padding: 3px 8px;
+  border: 1px solid rgba(28,43,6,0.35);
+  border-radius: 2px; font-size: 10px;
+  color: var(--s-text); line-height: 1.5;
+}
+.interest {
+  font-size: 11px; color: var(--s-text); line-height: 1.65;
+  padding-left: 10px; position: relative; margin-bottom: 2px;
+}
+.interest::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--s-muted); font-weight: 700; font-size: 14px; line-height: 1.3;
+}
+
+/* ══════════════════════════════════════
+   CONTENIDO PRINCIPAL
+   ══════════════════════════════════════ */
+.main-col {
+  grid-column: 2; grid-row: 2;
+  padding: 24px 34px 28px;
+  display: flex; flex-direction: column;
+}
+
+.sec { margin-bottom: 13px; }
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 700; color: #2A3D10;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 9px; padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--div);
+}
+.sec { margin-bottom: 13px; }
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 700; color: #2A3D10;
+  margin-bottom: 9px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--div);
+  display: flex; align-items: center; gap: 9px;
+}
+.sec-title span.dot {
+  display: inline-block; width: 18px; height: 2.5px;
+  background: var(--acc); border-radius: 2px; flex-shrink: 0;
+}
+
+.entry {
+  margin-bottom: 12px; padding-left: 14px; position: relative;
+}
+.entry::before {
+  content: ''; position: absolute; left: 0; top: 5px;
+  width: 6px; height: 6px; background: var(--acc);
+  transform: rotate(45deg); border-radius: 1px;
+}
+.e-top {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 8px; margin-bottom: 2px;
+}
+.e-co   { font-size: 13.5px; font-weight: 700; color: var(--t1); }
+.e-role {
+  font-size: 12px; color: var(--acc); font-style: italic; font-weight: 600;
+  font-family: 'Cormorant Garamond', serif; margin-bottom: 4px;
+}
+.e-date {
+  font-size: 11px; color: var(--t3); white-space: nowrap;
+  font-style: italic; font-family: 'Cormorant Garamond', serif; flex-shrink: 0;
+}
+.e-list { list-style: none; padding: 0; }
+.e-list li {
+  font-size: 12px; color: var(--t2); line-height: 1.65;
+  padding-left: 12px; position: relative; margin-bottom: 3px;
+}
+.e-list li::before {
+  content: '›'; position: absolute; left: 0;
+  color: var(--acc); font-size: 14px; line-height: 1.4;
+}
+
+.research-card {
+  padding: 4px 0 4px 14px; position: relative;
+}
+.research-card::before {
+  content: ''; position: absolute; left: 0; top: 5px;
+  width: 6px; height: 6px; background: var(--acc);
+  transform: rotate(45deg); border-radius: 1px;
+}
+.r-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px; font-weight: 700; font-style: italic;
+  color: var(--t1); line-height: 1.35; margin-bottom: 3px;
+}
+.r-inst {
+  font-size: 11px; color: var(--acc); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;
+}
+.r-body { font-size: 12px; color: var(--t2); line-height: 1.65; }
+
+.edu-item {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; margin-bottom: 9px; gap: 8px;
+  padding-left: 14px; position: relative;
+}
+.edu-item::before {
+  content: ''; position: absolute; left: 0; top: 4px;
+  width: 6px; height: 6px; background: var(--acc);
+  transform: rotate(45deg); border-radius: 1px;
+}
+.edu-inst { font-size: 13px; font-weight: 700; color: var(--t1); margin-bottom: 1px; }
+.edu-deg  { font-size: 12px; color: var(--t3); font-style: italic; font-family: 'Cormorant Garamond', serif; }
+.edu-date { font-size: 11px; color: var(--t3); font-style: italic; font-family: 'Cormorant Garamond', serif; white-space: nowrap; flex-shrink: 0; }
+
+.cert-row { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 8px; }
+.cert-dot-wrap { padding-top: 5px; flex-shrink: 0; }
+.cdot { width: 7px; height: 7px; border-radius: 50%; background: var(--acc); }
+.cert-name { font-size: 12.5px; font-weight: 700; color: var(--t1); line-height: 1.3; }
+.cert-org  { font-size: 11px; color: var(--t3); font-style: italic; font-family: 'Cormorant Garamond', serif; }
+
+/* ── PRINT ── */
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+  html, body { margin: 0; padding: 0; background: white; }
+  .controls, .note { display: none; }
+  .page { box-shadow: none; margin: 0; zoom: 0.9; }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button class="btn active" id="btn-es" onclick="setLang('es')">Español</button>
+  <button class="btn"        id="btn-en" onclick="setLang('en')">English</button>
+  <button class="btn btn-print" onclick="window.print()">Imprimir / Print ↗</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER ANCHO COMPLETO -->
+  <div class="page-header">
+    <div class="header-photo-area">
+      <img class="header-photo" src="img3.jpeg" alt="Samantha Hernández">
+    </div>
+    <div class="header-right">
+      <div class="header-name-band">
+        <div class="cv-name">Samantha Montserrat Hernández Vázquez</div>
+        <div class="cv-role"
+             data-es="Ingeniería Biónica · Tecnología en Salud · Innovación Tecnológica"
+             data-en="Bionic Engineering · Health Technology · Technological Innovation">
+          Ingeniería Biónica · Tecnología en Salud · Innovación Tecnológica
+        </div>
+      </div>
+      <div class="header-desc-band">
+        <p class="cv-profile"
+           data-es="Ingeniera Biónica en etapa de titulación, con enfoque en soluciones tecnológicas aplicadas a sistemas biológicos. Perfil interdisciplinario en la intersección entre ingeniería, ciencias de la vida y transformación digital, con experiencia en investigación aplicada y entornos empresariales."
+           data-en="Bionic Engineering student in the final stage of graduation, with a focus on technology solutions applied to biological systems. Interdisciplinary profile at the intersection of engineering, life sciences and digital transformation, with experience in applied research and corporate environments.">
+          Ingeniera Biónica en etapa de titulación, con enfoque en soluciones tecnológicas aplicadas a sistemas biológicos. Perfil interdisciplinario en la intersección entre ingeniería, ciencias de la vida y transformación digital, con experiencia en investigación aplicada y entornos empresariales.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- CONTACTO -->
+    <div class="s-section">
+      <div class="s-title" data-es="Contacto" data-en="Contact">Contacto</div>
+      <div class="c-item">
+        <span class="c-lbl" data-es="Teléfono" data-en="Phone">Teléfono</span>
+        <span class="c-val">(55) 4187 9824</span>
+      </div>
+      <div class="c-item">
+        <span class="c-lbl">Email</span>
+        <span class="c-val">sam.vaz.26.03@gmail.com</span>
+      </div>
+      <div class="c-item">
+        <span class="c-lbl">LinkedIn</span>
+        <a class="c-val small" href="https://www.linkedin.com/in/samantha-montserrat-hern%C3%A1ndez-v%C3%A1zquez-41a3672ba" target="_blank" style="color:var(--s-text);text-decoration:underline;text-decoration-color:rgba(28,43,6,0.4);">linkedin.com/in/samantha-montserrat-hernández-vázquez-41a3672ba</a>
+      </div>
+      <div class="c-item">
+        <span class="c-lbl" data-es="Ubicación" data-en="Location">Ubicación</span>
+        <span class="c-val" data-es="Ciudad de México, México" data-en="Mexico City, Mexico">Ciudad de México, México</span>
+      </div>
+    </div>
+
+    <!-- IDIOMAS -->
+    <div class="s-section">
+      <div class="s-title" data-es="Idiomas" data-en="Languages">Idiomas</div>
+      <div class="sk-bar">
+        <div class="sk-row">
+          <span class="sk-name" data-es="Inglés" data-en="English">Inglés</span>
+          <span class="sk-pct">95%</span>
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
+      </div>
+      <div class="sk-bar">
+        <div class="sk-row">
+          <span class="sk-name" data-es="Alemán" data-en="German">Alemán</span>
+          <span class="sk-pct">8%</span>
+        </div>
+        <div class="bar"><div class="bar-fill" style="width:8%"></div></div>
+      </div>
+    </div>
+
+    <!-- HABILIDADES TÉCNICAS -->
+    <div class="s-section">
+      <div class="s-title" data-es="Habilidades Técnicas" data-en="Technical Skills">Habilidades Técnicas</div>
+      <div class="sk-bar">
+        <div class="sk-row"><span class="sk-name">MATLAB</span><span class="sk-pct">70%</span></div>
+        <div class="bar"><div class="bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="sk-bar">
+        <div class="sk-row"><span class="sk-name">Python</span><span class="sk-pct">65%</span></div>
+        <div class="bar"><div class="bar-fill" style="width:65%"></div></div>
+      </div>
+      <div class="sk-bar">
+        <div class="sk-row"><span class="sk-name">C++</span><span class="sk-pct">45%</span></div>
+        <div class="bar"><div class="bar-fill" style="width:45%"></div></div>
+      </div>
+      <div class="sk-bar">
+        <div class="sk-row"><span class="sk-name">MS Office Suite</span><span class="sk-pct">85%</span></div>
+        <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="sk-bar">
+        <div class="sk-row"><span class="sk-name">RHEL / Red Hat</span><span class="sk-pct">60%</span></div>
+        <div class="bar"><div class="bar-fill" style="width:60%"></div></div>
+      </div>
+      <div class="sk-bar">
+        <div class="sk-row"><span class="sk-name">Solidworks</span><span class="sk-pct">35%</span></div>
+        <div class="bar"><div class="bar-fill" style="width:35%"></div></div>
+      </div>
+    </div>
+
+    <!-- HABILIDADES BLANDAS -->
+    <div class="s-section">
+      <div class="s-title" data-es="Habilidades Blandas" data-en="Soft Skills">Habilidades Blandas</div>
+      <div class="pills">
+        <span class="pill" data-es="Comunicación efectiva"           data-en="Effective communication">Comunicación efectiva</span>
+        <span class="pill" data-es="Colaboración interdisciplinaria" data-en="Interdisciplinary collaboration">Colaboración interdisciplinaria</span>
+        <span class="pill" data-es="Comunicación bilingüe"           data-en="Bilingual communication">Comunicación bilingüe</span>
+        <span class="pill" data-es="Orientación al cliente"          data-en="Client-facing communication">Orientación al cliente</span>
+        <span class="pill" data-es="Trabajo en equipo"               data-en="Teamwork">Trabajo en equipo</span>
+      </div>
+    </div>
+
+    <!-- INTERESES -->
+    <div class="s-section">
+      <div class="s-title" data-es="Intereses" data-en="Interests">Intereses</div>
+      <div class="interest" data-es="Natación y voleibol"   data-en="Swimming & volleyball">Natación y voleibol</div>
+      <div class="interest" data-es="Dispositivos biónicos" data-en="Bionic devices">Dispositivos biónicos</div>
+      <div class="interest" data-es="Tecnología en salud"   data-en="Health technology">Tecnología en salud</div>
+      <div class="interest" data-es="Lectura y dibujo"      data-en="Reading & drawing">Lectura y dibujo</div>
+    </div>
+
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-col">
+
+    <!-- EXPERIENCIA LABORAL -->
+    <div class="sec">
+      <div class="sec-title" data-es="Experiencia Laboral" data-en="Work Experience">Experiencia Laboral</div>
+
+      <div class="entry">
+        <div class="e-top">
+          <div>
+            <div class="e-co">Red Hat</div>
+            <div class="e-role"
+                 data-es="Pasante de Ventas Técnicas · Equipo de Arquitectos de Soluciones"
+                 data-en="Tech Sales Intern · Solutions Architects Team">
+              Pasante de Ventas Técnicas · Equipo de Arquitectos de Soluciones
+            </div>
+          </div>
+          <div class="e-date" data-es="Feb 2025 – Actualidad" data-en="Feb 2025 – Present">Feb 2025 – Actualidad</div>
+        </div>
+        <ul class="e-list">
+          <li data-es="Estudio del portafolio de soluciones de Red Hat —RHEL, virtualización, nube híbrida e IA/ML— para sostener conversaciones técnicas orientadas a soluciones con clientes corporativos."
+              data-en="Study of Red Hat's solutions portfolio —RHEL, virtualization, hybrid cloud, and AI/ML— to support technical, solution-oriented conversations with enterprise clients.">
+            Estudio del portafolio de soluciones de Red Hat —RHEL, virtualización, nube híbrida e IA/ML— para sostener conversaciones técnicas orientadas a soluciones con clientes corporativos.
+          </li>
+          <li data-es="Colaboración con el equipo de Arquitectos de Soluciones en la preparación y presentación de propuestas técnicas adaptadas a necesidades de negocio."
+              data-en="Collaboration with the Solutions Architects team in the preparation and delivery of technical proposals tailored to business needs.">
+            Colaboración con el equipo de Arquitectos de Soluciones en la preparación y presentación de propuestas técnicas adaptadas a necesidades de negocio.
+          </li>
+          <li data-es="Desarrollo de habilidades en comunicación técnica consultiva, traduciendo capacidades de producto en valor para el cliente."
+              data-en="Development of consultative technical communication skills, translating product capabilities into client value.">
+            Desarrollo de habilidades en comunicación técnica consultiva, traduciendo capacidades de producto en valor para el cliente.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="e-top">
+          <div>
+            <div class="e-co">Deloitte</div>
+            <div class="e-role"
+                 data-es="Pasante de Asesoría de Riesgos en Sostenibilidad"
+                 data-en="Risk Advisory Intern — Sustainability">
+              Pasante de Asesoría de Riesgos en Sostenibilidad
+            </div>
+          </div>
+          <div class="e-date" data-es="Jul – Ago 2024" data-en="Jul – Aug 2024">Jul – Ago 2024</div>
+        </div>
+        <ul class="e-list">
+          <li data-es="Apoyé al equipo de Asesoría de Riesgos en Sostenibilidad mediante análisis de datos en Excel como parte del Programa de Verano de Talentos."
+              data-en="Supported the Sustainability Risk Advisory team through data analysis in Excel as part of the Summer Talent Programme.">
+            Apoyé al equipo de Asesoría de Riesgos en Sostenibilidad mediante análisis de datos en Excel como parte del Programa de Verano de Talentos.
+          </li>
+          <li data-es="Recolecté, organicé y analicé datos para identificar riesgos potenciales en proyectos de sostenibilidad; contribuí a la elaboración de informes para clientes."
+              data-en="Collected, organized, and analyzed data to identify potential risks in sustainability projects; contributed to client-facing reports.">
+            Recolecté, organicé y analicé datos para identificar riesgos potenciales en proyectos de sostenibilidad; contribuí a la elaboración de informes para clientes.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TESIS -->
+    <div class="sec">
+      <div class="sec-title" data-es="Investigación · Tesis" data-en="Research · Thesis">Investigación · Tesis</div>
+      <div class="research-card">
+        <div class="r-title"
+             data-es="Prototipo de Detección de Glucosa Basado en Espectroscopía de Infrarrojo Cercano"
+             data-en="Near-Infrared Spectroscopy-Based Glucose Detection Prototype">
+          Prototipo de Detección de Glucosa Basado en Espectroscopía de Infrarrojo Cercano
+        </div>
+        <div class="r-inst">Terminal Project · Instituto Politécnico Nacional (UPIITA–UPIIH), 2025</div>
+        <p class="r-body"
+           data-es="Diseño y construcción de un sistema de medición óptica a 1550 nm para la detección de concentración de glucosa en soluciones acuosas. Desarrollo de electrónica a medida (PCB con ESP32S3, amplificador de transimpedancia y fotodiodo de germanio), carcasa impresa en 3D con trayectoria óptica de cubeta, y aplicación móvil companion (Flutter). Linealidad validada mediante experimentos in vitro (R²=0.9968) y simulaciones de Monte Carlo de un modelo de tejido de 3 capas."
+           data-en="Designed and built an optical measurement system operating at 1550 nm for glucose concentration detection in aqueous solutions. Developed custom electronics (PCB with ESP32S3, transimpedance amplifier, and germanium photodiode), a 3D-printed enclosure with cuvette-based optical path, and a companion mobile app (Flutter). Validated linearity through in vitro experiments (R²=0.9968) and Monte Carlo simulations of a 3-layer tissue model.">
+          Diseño y construcción de un sistema de medición óptica a 1550 nm para la detección de concentración de glucosa en soluciones acuosas. Desarrollo de electrónica a medida (PCB con ESP32S3, amplificador de transimpedancia y fotodiodo de germanio), carcasa impresa en 3D con trayectoria óptica de cubeta, y aplicación móvil companion (Flutter). Linealidad validada mediante experimentos in vitro (R²=0.9968) y simulaciones de Monte Carlo de un modelo de tejido de 3 capas.
+        </p>
+      </div>
+    </div>
+
+    <!-- EDUCACIÓN -->
+    <div class="sec">
+      <div class="sec-title" data-es="Educación" data-en="Education">Educación</div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-inst"
+               data-es="Unidad Profesional Interdisciplinaria en Ingeniería y Tecnologías Avanzadas (UPIITA), IPN"
+               data-en="UPIITA · Instituto Politécnico Nacional (IPN)">
+            Unidad Profesional Interdisciplinaria en Ingeniería y Tecnologías Avanzadas (UPIITA), IPN
+          </div>
+          <div class="edu-deg" data-es="Ingeniería Biónica" data-en="Bionic Engineering">Ingeniería Biónica</div>
+        </div>
+        <div class="edu-date" data-es="Ene 2021 – 2025" data-en="Jan 2021 – 2025">Ene 2021 – 2025</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-inst">Queen Mary University of London</div>
+          <div class="edu-deg"
+               data-es="Entrepreneurship and Leadership Programme"
+               data-en="Entrepreneurship and Leadership Programme">
+            Entrepreneurship and Leadership Programme
+          </div>
+        </div>
+        <div class="edu-date" data-es="Ago – Sep 2024" data-en="Aug – Sep 2024">Ago – Sep 2024</div>
+      </div>
+    </div>
+
+    <!-- CURSOS Y CERTIFICACIONES -->
+    <div class="sec">
+      <div class="sec-title" data-es="Cursos y Certificaciones" data-en="Courses & Certifications">Cursos y Certificaciones</div>
+      <div class="cert-row">
+        <div class="cert-dot-wrap"><div class="cdot"></div></div>
+        <div>
+          <div class="cert-name" data-es="Certificación B2 en Inglés" data-en="English B2 Certification">Certificación B2 en Inglés</div>
+          <div class="cert-org">Duolingo · 2023</div>
+        </div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-dot-wrap"><div class="cdot"></div></div>
+        <div>
+          <div class="cert-name"
+               data-es="Programación Python en el Ámbito Científico"
+               data-en="Python Programming for Scientific Applications">
+            Programación Python en el Ámbito Científico
+          </div>
+          <div class="cert-org"
+               data-es="Centro de Investigación en Computación, IPN · 2023"
+               data-en="Centro de Investigación en Computación, IPN · 2023">
+            Centro de Investigación en Computación, IPN · 2023
+          </div>
+        </div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-dot-wrap"><div class="cdot"></div></div>
+        <div>
+          <div class="cert-name" data-es="Análisis de Datos" data-en="Data Analysis Course">Análisis de Datos</div>
+          <div class="cert-org" data-es="Google · En curso" data-en="Google · Ongoing">Google · En curso</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-es]').forEach(function(el) {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+}
+</script>
+</body>
+</html>
